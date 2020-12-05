@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'yaml/store'
+
+store = YAML::Store.new('data/programming-languages.store')
+
+records = store.transaction(true) { store[:records] }
+
+match = records.find { |(id, record)| record[:displaytitle] == ARGV[0] }
+
+if match
+  puts ''
+  puts match[1][:displaytitle]
+  puts '---'
+  puts match[1][:extract]
+  puts ''
+  puts match[1][:content_urls][:desktop][:page]
+end
