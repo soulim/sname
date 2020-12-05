@@ -20,7 +20,12 @@ cd sname
 bin/list
 
 # if you have FZF installed
-bin/list | fzf --preview "bin/preview {}"
+
+# select one with fuzzy search and preview
+bin/list | fzf --preview="bin/preview {}" --preview-window=up:wrap
+
+# select one from three random options
+bin/list | shuf | head -n 3 | fzf --preview="bin/preview {}" --preview-window=up:wrap
 ```
 
 ## Data source
