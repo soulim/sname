@@ -1,5 +1,7 @@
 # Sprint name tool (sname)
 
+![sname](screenshot.png)
+
 Sprint name tool helps to choose an interesting name for a sprint.
 At the moment it uses a database of 655 programming languages as
 a source of inspiration.
