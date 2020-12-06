@@ -42,4 +42,7 @@ Please see [CONTRIBUTING](docs/CONTRIBUTING.md) for details.
 
 ## License
 
-Please see [LICENSE](LICENSE) for licensing details.
+Copyright (c) Alexander Sulim
+
+Sprint name tool (sname) is an Open Source project licensed under the terms of
+the LGPLv3 license.  Please see [COPYING.LESSER][COPYING.LESSER] for license text.
