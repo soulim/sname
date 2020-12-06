@@ -18,7 +18,7 @@ id, record = records.find { |(key, value)| value[:name] == name }
 if record
   store = YAML::Store.new('cache/pins.store')
   store.transaction do
-    records = store[:records]
+    records = store[:records] || {}
     records[id] = record
     store[:records] = records
   end
