@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'yaml/store'
+
+begin
+  name = ARGV[0] || ARGF.readline.strip
+rescue EOFError
+  exit 1
+end
+
+store = YAML::Store.new('data/programming-languages.store')
+
+records = store.transaction(true) { store[:records] }
+
+id, record = records.find { |(key, value)| value[:displaytitle] == name }
+
+if record
+  store = YAML::Store.new('cache/pins.store')
+  store.transaction do
+    records = store[:records]
+    records[id] = record
+    store[:records] = records
+  end
+end
