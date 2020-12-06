@@ -7,13 +7,13 @@ store = YAML::Store.new('data/programming-languages.store')
 
 records = store.transaction(true) { store[:records] }
 
-match = records.find { |(id, record)| record[:displaytitle] == ARGV[0] }
+match = records.find { |(id, record)| record[:name] == ARGV[0] }
 
 if match
   puts ''
-  puts match[1][:displaytitle]
+  puts match[1][:name]
   puts '---'
-  puts match[1][:extract]
+  puts match[1][:description]
   puts ''
-  puts match[1][:content_urls][:desktop][:page]
+  puts match[1][:wikipedia_url]
 end

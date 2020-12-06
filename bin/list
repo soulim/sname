@@ -8,5 +8,5 @@ store = YAML::Store.new('data/programming-languages.store')
 records = store.transaction(true) { store[:records] }
 
 records.each do |(id, record)|
-  puts record[:displaytitle]
+  puts record[:name]
 end

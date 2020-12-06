@@ -13,7 +13,7 @@ store = YAML::Store.new('data/programming-languages.store')
 
 records = store.transaction(true) { store[:records] }
 
-id, record = records.find { |(key, value)| value[:displaytitle] == name }
+id, record = records.find { |(key, value)| value[:name] == name }
 
 if record
   store = YAML::Store.new('cache/pins.store')
