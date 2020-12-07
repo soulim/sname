@@ -33,10 +33,12 @@ bin/list | shuf | head -n 3 | fzf --preview="bin/preview {}" --preview-window=up
 bin/list | shuf | head -n 3 | fzf --preview="bin/preview {}" --preview-window=up:wrap --no-multi | bin/pin
 ```
 
-## Data source
+## Data sources
 
-The database of programming languages is built using information provided
-on Wikipedia.
+The database of programming languages is built using following sources:
+
+  * [Wikipedia](https://www.wikipedia.org/)
+  * [The Hello World Collection](http://helloworldcollection.de/)
 
 ## Contributing
 

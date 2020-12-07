@@ -14,6 +14,13 @@ if match
   puts match[1][:name]
   puts '---'
   puts match[1][:description]
+  if match[1][:sample]
+    puts ''
+    puts '```'
+    puts match[1][:sample]
+    puts '```'
+  end
   puts ''
+  puts '---'
   puts match[1][:wikipedia_url]
 end
