@@ -29,7 +29,7 @@ bin/list | fzf --preview="bin/preview {}" --preview-window=up:wrap
 # select one from three random options
 bin/list | shuf | head -n 3 | fzf --preview="bin/preview {}" --preview-window=up:wrap
 
-# select one from three random options and remember the choise
+# select one from three random options and remember the choice
 bin/list | shuf | head -n 3 | fzf --preview="bin/preview {}" --preview-window=up:wrap --no-multi | bin/pin
 ```
 
